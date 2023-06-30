@@ -19,6 +19,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # load dotenv
 load_dotenv()
 
+# DB configuration
+db_name = os.getenv('DB_NAME')
+db_password = os.getenv('DB_PASSWORD')
+db_user = os.getenv('DB_USER')
+db_host = os.getenv('DB_HOST')
+db_port = os.getenv('DB_PORT')
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -42,7 +49,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'drf_yasg',
     'rest_framework',
+    'Product',
 ]
 
 MIDDLEWARE = [
@@ -79,10 +88,20 @@ WSGI_APPLICATION = 'SenelaApi.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': db_name,
+        'HOST': db_host,
+        'PORT': db_port,
+        'USER': db_user,
+        'PASSWORD': db_password,
     }
 }
 

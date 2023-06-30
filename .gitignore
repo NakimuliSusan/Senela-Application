@@ -1,3 +1,6 @@
 myenv
 SenelaApi/__pycache__
 .env
+.vscode
+Product/__pycache__
+Product/migrations/__pycache__
