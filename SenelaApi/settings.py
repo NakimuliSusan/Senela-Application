@@ -25,6 +25,8 @@ db_password = os.getenv('DB_PASSWORD')
 db_user = os.getenv('DB_USER')
 db_host = os.getenv('DB_HOST')
 db_port = os.getenv('DB_PORT')
+account_sid = os.getenv('ACCOUNT_SID')
+auth_token  = os.getenv('AUTH_TOKEN')
 
 
 # Quick-start development settings - unsuitable for production
@@ -52,6 +54,7 @@ INSTALLED_APPS = [
     'drf_yasg',
     'rest_framework',
     'Product',
+    'User',
 ]
 
 MIDDLEWARE = [
@@ -146,3 +149,4 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+

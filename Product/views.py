@@ -5,6 +5,9 @@ from Product.models import Product
 from rest_framework import status
 from rest_framework.response import Response
 
+
+
+
 # Create your views here.
 
 @api_view(['GET', 'POST'])
@@ -64,3 +67,4 @@ def product_detail(request, id):
         """
         product.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+    
