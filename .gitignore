@@ -4,4 +4,5 @@ SenelaApi/__pycache__
 .vscode
 Product/__pycache__
 Product/migrations/__pycache__
+User/__pycache__
 User/migrations/__pycache__
